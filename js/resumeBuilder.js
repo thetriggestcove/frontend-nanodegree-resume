@@ -1,4 +1,4 @@
-
+//bio object, including contact and location information
 var bio = {
     "name" : "Jessica Miles",
     "role" : "Programmer, Technical Communicator, and Web Developer",
@@ -47,7 +47,7 @@ var bio = {
         $("#header").append(
             HTMLbioPic.replace("%data%", bio.biopic) +
             HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage)
-        );
+            );
     
         if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
@@ -58,8 +58,7 @@ var bio = {
     }
 };
     
-//Each school object in schools contains a name, location, degree, majors array,
-//  dates attended and a url for the school's website.
+//education object, includes degrees and online classes I've taken
 
 var education = {
     "schools" : [
@@ -70,8 +69,7 @@ var education = {
            "majors" : ["n/a"],
            "dates" : "2003-2004",
            "url" : "www.sarahlawrence.edu"
-        }
-        ,
+        },
         {
            "name" : "Rollins College",
            "location" : "Winter Park, FL",
@@ -79,8 +77,7 @@ var education = {
            "majors" : ["English"],
            "dates" : "2004-2007",
            "url" : "www.rollins.edu"
-        }
-        ,
+        },
         {
            "name" : "Udacity",
            "location" : "Online",
@@ -90,8 +87,6 @@ var education = {
            "url" : "www.udacity.com"
         }
     ],
-    
-//Each onlineCourse object in onlineCourses should contain a title, school, dates attended and a url for the course.
     "onlineCourses" : [
         {
             "title" : "Python",
@@ -126,7 +121,6 @@ var education = {
             if (education.schools[school_obj].majors.length > 0) {
                 $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[school_obj].majors.join(", ")));
             }
-    
         }
         
         //append online classes
@@ -139,12 +133,12 @@ var education = {
                 HTMLonlineSchool.replace("%data%",education.onlineCourses[class_obj].school) +
                 HTMLonlineDates.replace("%data%",education.onlineCourses[class_obj].date) +
                 HTMLonlineURL.replace("%data%",education.onlineCourses[class_obj].url)
-                );
+            );
         }
     }
 };
 
-//Each job object in jobs should contain an employer, title, location, dates worked and description.
+//work object includes employment history
 var work = {
     "jobs" : [
         {
@@ -154,14 +148,14 @@ var work = {
             "dates" : "2014-present",
             "description" : "E-Discovery consulting and technical services."
         },
-            {
+        {
             "employer" : "Epiq Systems",
             "title" : "Litigation Support Manager",
             "location" : "New York City, NY",
             "dates" : "2012-2014",
             "description" : "E-Discovery technical services; later managed Litigation Support Team."
         },
-            {
+        {
             "employer" : "De Novo Legal",
             "title" : "Input Team Lead",
             "location" : "New York City, NY",
@@ -175,28 +169,25 @@ var work = {
             "dates" : "2004-2009",
             "description" : "Technical support related to document scanning and E-Discovery services."
         }
-    ]
-};
-
-work.display = function () {
-    for (var job in work.jobs) {
-        
-        $("#workExperience").append(HTMLworkStart);
-        
-        $(".work-entry:last").append(
-            HTMLworkEmployer.replace("%data%", work.jobs[job].employer) + 
-            HTMLworkTitle.replace("%data%", work.jobs[job].title) +
-            HTMLworkLocation.replace("%data%", work.jobs[job].location) +
-            HTMLworkDates.replace("%data%", work.jobs[job].dates) +
-            HTMLworkDescription.replace("%data%", work.jobs[job].description)
-        );
+    ],
+    "display" : function() {
+        for (var job in work.jobs) {
+            
+            $("#workExperience").append(HTMLworkStart);
+            
+            $(".work-entry:last").append(
+                HTMLworkEmployer.replace("%data%", work.jobs[job].employer) + 
+                HTMLworkTitle.replace("%data%", work.jobs[job].title) +
+                HTMLworkLocation.replace("%data%", work.jobs[job].location) +
+                HTMLworkDates.replace("%data%", work.jobs[job].dates) +
+                HTMLworkDescription.replace("%data%", work.jobs[job].description)
+            );
+        }
     }
 };
 
 
-
-//Each project object in projects should contain
-//  a title, dates worked, description, and an images array with URL strings for project images.
+//project object contains projects I have completed. Populated with sample data for now.
 
 var projects = {
     "projects" : [
@@ -204,13 +195,13 @@ var projects = {
             "title" : "Sample1",
             "dates" : "2016",
             "description" : "Sample project 1",
-            "images" : ["image1","image2","image3"]
+            "images" : ["http://placehold.it/150x150","http://placehold.it/150x150","http://placehold.it/150x150"]
         },
         {
             "title" : "Sample2",
             "dates" : "2016",
             "description" : "Sample project 2",
-            "images" : ["image1","image2","image3"]
+            "images" : ["http://placehold.it/150x150","http://placehold.it/150x150","http://placehold.it/150x150"]
         }
     ],
     "display" : function () {
@@ -229,16 +220,17 @@ var projects = {
     }
 };
 
+//display formatted information in each of the objects, in order
 bio.display();
-
 work.display();
-
 projects.display();
-
 education.display();
+
+//Append map to page
 
 $("#mapDiv").append(googleMap);
 
+//function that gets the locations from each object
 function locationizer(work_obj) {
     var locations = [];
     for (var jobloc in work_obj.jobs) {
