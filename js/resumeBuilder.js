@@ -2,7 +2,7 @@
 var bio = {
     'name' : 'Jessica Miles',
     'role' : 'Programmer, Technical Communicator, and Web Developer',
-    'contact' : {
+    'contacts' : {
         'mobile' : '407-701-5342',
         'email' : 'jess.c.miles@gmail.com',
         'github' : 'thetriggestcove',
