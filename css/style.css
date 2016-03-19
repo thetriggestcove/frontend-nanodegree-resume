@@ -3,7 +3,6 @@ div,
 ul,
 li,
 p,
-h1,
 h2,
 h3,
 h4,
@@ -14,6 +13,11 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+h1,
+#role {
+  font-family: 'Inconsolata';
+}
+
 .clear-fix {
   overflow: auto;
 }
@@ -21,28 +25,30 @@ h6 {
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding: 0 5% 20px 5%;
+  padding-bottom
 }
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #339900;
   line-height: 48px;
   display: inline;
 }
 
 h2 {
+  font-style: italic;
   font-weight: bold;
   font-size: 24px;
   color: #999;
   line-height: 29px;
-  padding: 10px;
+  padding: 0 5%;
 }
 
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #999;
   line-height: 22px;
 }
 
@@ -76,7 +82,6 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -86,35 +91,41 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #006600;
   text-decoration: none;
   margin-top: 10px;
   display: block;
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
+  font-size: 14px;
   color: #f3f3f3;
-  line-height: 28px;
 }
 
-#skills-h3 {
-  color: #f5ae23;
+.center-text {
+  color: #f3f3f3;
+}
+
+#skills-h3{
+  color: #33ff00;
   display: none;
 }
 
+#role {
+  font-weight: bold;
+  color: #f3f3f3;
+}
+
 .orange {
-  background-color: #f5ae23;
+  background-color: #006600;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #33ff00;
 }
 
 .white-text {
-  font-weight: bold;
-  color: #fff;
+  color: #f3f3f3;
 }
 
 .gray {
@@ -165,6 +176,8 @@ span {
 }
 
 #lets-connect {
+  font-weight: bold;
+  color: #33ff00;
   text-align: center;
 }
 
