@@ -31,17 +31,17 @@ var bio = {
         );
         
         $('#topContacts').append(
-            HTMLmobile.replace('%data%', bio.contact.mobile) +
-            HTMLemail.replace('%data%', bio.contact.email) +
-            HTMLgithub.replace('%data%', bio.contact.github) +
-            HTMLlocation.replace('%data%', bio.contact.location)
+            HTMLmobile.replace('%data%', bio.contacts.mobile) +
+            HTMLemail.replace('%data%', bio.contacts.email) +
+            HTMLgithub.replace('%data%', bio.contacts.github) +
+            HTMLlocation.replace('%data%', bio.contacts.location)
         );
         
         $('#footerContacts').append(
-            HTMLmobile.replace('%data%', bio.contact.mobile) +
-            HTMLemail.replace('%data%', bio.contact.email) +
-            HTMLgithub.replace('%data%', bio.contact.github) +
-            HTMLlocation.replace('%data%', bio.contact.location)
+            HTMLmobile.replace('%data%', bio.contacts.mobile) +
+            HTMLemail.replace('%data%', bio.contacts.email) +
+            HTMLgithub.replace('%data%', bio.contacts.github) +
+            HTMLlocation.replace('%data%', bio.contacts.location)
         );
         
         $('#header').append(
@@ -52,7 +52,7 @@ var bio = {
         if (bio.skills.length > 0) {
             $('#header').append(HTMLskillsStart);
             bio.skills.forEach (function(skill) {
-                $('#header').append(HTMLskills.replace('%data%', skill));
+                $('#skills').append(HTMLskills.replace('%data%', skill));
             });
         }
     }
